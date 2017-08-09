@@ -26,17 +26,4 @@ public class ApplicationTest {
         mockMvc.perform(get("/index.html"))
             .andExpect(content().string(containsString("Get your greeting")));
     }
-
-    @Test
-    public void greeting() throws Exception {
-        mockMvc.perform(get("/greeting"))
-            .andExpect(content().string(containsString("Hello, World!")));
-    }
-
-    @Test
-    public void greetingWithUser() throws Exception {
-        mockMvc.perform(get("/greeting").param("name", "Greg"))
-            .andExpect(content().string(containsString("Hello, Greg!")));
-    }
-
 }
